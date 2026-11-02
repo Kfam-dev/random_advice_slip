@@ -1,0 +1,100 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 3rem 1.5rem;
+  box-sizing: border-box;
+}
+
+/* Theme Toggle Button locked dead-center */
+.theme-toggle-btn {
+  background-color: transparent;
+  border: 1px solid var(--border);
+  color: var(--text-h);
+  padding: 8px 16px;
+  border-radius: 20px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  font-weight: 500;
+  margin: 0 auto 1.5rem auto; /* Centers the button horizontally */
+  align-self: center;         /* Forces alignment inside flex container */
+  transition: all 0.2s ease;
+}
+
+.theme-toggle-btn:hover {
+  border-color: var(--accent);
+  color: var(--accent);
+}
+
+/* Animation definition */
+@keyframes peelUp {
+  0% {
+    opacity: 0.3;
+    transform: translateY(15px) rotate(-2deg) scale(0.97);
+  }
+  50% {
+    opacity: 0.9;
+    transform: translateY(-4px) rotate(1deg) scale(1.01);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) rotate(0deg) scale(1);
+  }
+}
+
+.advice-card {
+  background-color: var(--code-bg); /* Fallback to theme variable */
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 2.5rem;
+  max-width: 550px;
+  width: 90%;
+  margin: 1.5rem auto;
+  box-shadow: var(--shadow);
+  box-sizing: border-box;
+  animation: peelUp 0.35s ease-out forwards;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.advice-text {
+  font-size: 1.35rem;
+  color: var(--text-h);
+  margin-bottom: 2rem;
+  font-family: var(--sans);
+  line-height: 1.5;
+}
+
+.advice-button {
+  background-color: var(--accent);
+  color: var(--accent-text);
+  border: none;
+  padding: 12px 24px;
+  font-size: 1rem;
+  font-weight: 600;
+  border-radius: 8px;
+  cursor: pointer;
+  box-shadow: var(--shadow);
+  transition: opacity 0.2s ease, transform 0.1s ease;
+}
+
+.advice-button:hover {
+  opacity: 0.9;
+}
+
+.advice-button:active {
+  transform: scale(0.98);
+}
+
+/* Post-it Note Theme Classes */
+.advice-card.dark-1 { background-color: #261a38 !important; }
+.advice-card.dark-2 { background-color: #1a3038 !important; }
+.advice-card.dark-3 { background-color: #381a2e !important; }
+.advice-card.dark-4 { background-color: #1a2038 !important; }
+.advice-card.dark-5 { background-color: #2d381a !important; }
+
+.advice-card.light-1 { background-color: #f2eee3 !important; }
+.advice-card.light-2 { background-color: #f4e7e4 !important; }
+.advice-card.light-3 { background-color: #e4ecef !important; }
+.advice-card.light-4 { background-color: #e5ede6 !important; }
+.advice-card.light-5 { background-color: #f5efe0 !important; }

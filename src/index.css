@@ -1,0 +1,94 @@
+:root {
+  --bg: #16171d;
+  --code-bg: #261a38;
+  --text: #9ca3af;
+  --text-h: #f3f4f6;
+  --border: #2e303a;
+  --accent: #c084fc;
+  --accent-text: #16171d;
+  --shadow: rgba(0, 0, 0, 0.4) 0 10px 15px -3px, rgba(0, 0, 0, 0.25) 0 4px 6px -2px;
+
+  --sans: system-ui, 'Segoe UI', Roboto, sans-serif;
+  --heading: system-ui, 'Segoe UI', Roboto, sans-serif;
+
+  font: 18px/145% var(--sans);
+  letter-spacing: 0.18px;
+}
+
+/* SOFT LOW-CONTRAST LIGHT MODE (Zero Blinding White, Zero Harsh Contrast) */
+body.light-mode {
+  --bg: #d4cfc5;               /* Balanced soft taupe-gray background */
+  --code-bg: #f2eee3;          /* Soft warm parchment default post-it */
+  --text: #3b3730;             /* Soft charcoal text (readable, not harsh black) */
+  --text-h: #1f1c18;           /* Deep warm header text */
+  --border: #b8b1a4;           /* Gentle, low-contrast border */
+  --accent: #6c547b;           /* Muted dusty plum accent button */
+  --accent-text: #ffffff;      /* White text on button */
+  --shadow: rgba(0, 0, 0, 0.08) 0 8px 12px -3px, rgba(0, 0, 0, 0.04) 0 3px 5px -2px;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+  background-color: var(--bg);
+  color: var(--text);
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+#root {
+  width: 1126px;
+  max-width: 100%;
+  margin: 0 auto;
+  text-align: center;
+  border-inline: 1px solid var(--border);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* <-- THIS FORCES EVERYTHING TO BE CENTERED */
+  box-sizing: border-box;
+}
+
+.container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 3rem 1.5rem;
+  box-sizing: border-box;
+}
+/* Dark Mode Page Background (Default) */
+.container.dark-mode {
+  background-color: #16171d;
+  color: #f3f4f6;
+}
+
+/* Light Mode Page Background (Warm Taupe - Level 6/7 Brightness) */
+.container.light-mode {
+  background-color: #d4cfc5;
+  color: #1f1c18;
+}
+
+h1, h2 {
+  font-family: var(--heading);
+  font-weight: 500;
+  color: var(--text-h);
+}
+
+h1 {
+  font-size: 56px;
+  letter-spacing: -1.68px;
+  margin: 32px 0 16px 0;
+}
+
+h2 {
+  font-size: 24px;
+  line-height: 118%;
+  letter-spacing: -0.24px;
+  margin: 0 0 16px 0;
+}
+
+p {
+  margin: 0;
+}
